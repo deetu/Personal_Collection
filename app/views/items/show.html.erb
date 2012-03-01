@@ -1,0 +1,40 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @item.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @item.description %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @item.location %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @item.category.name %>
+</p>
+
+<p>
+  <b>Subcategory:</b>
+  <%= @item.subcategory.name %>
+</p>
+<h4>Comments</h4>
+<%= render @item.comments %>
+  
+
+<h5>Add a comment</h5>
+<%= render "comments/form" %>
+
+<br />
+
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

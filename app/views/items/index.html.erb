@@ -1,0 +1,40 @@
+<h1>List of Items<p align="center"></h1>
+<h4><a href="categories">Category</a> <h4><a href="subcategories">Subcategory</a>         <a href="my_account">My Account</a>                  <a href="log_out">Log out</a></h4>
+<h4><%= link_to 'New Item', new_item_path %>
+
+<table border="9">
+
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Location</th>
+    <th>Category</th>
+    <th>Subcategory</th>
+    <th>Actions</th>
+    <th>Actions</th>
+    <th>Actions</th>
+    
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= item.description %></td>
+    <td><%= item.location %></td>
+    <td><%= item.category.name %></td>
+    <td><%= item.subcategory.name %></td>
+    <td><%= link_to 'Show', item %></td>
+    <td><%= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+<h3>Enter keyword</h3>
+<form action ="items/search" method="post">
+<input name = "key" type="input" />
+<input value="Send" type="submit"/>
+</form>
+
+<br />
+
+<%= link_to 'New Item', new_item_path %>

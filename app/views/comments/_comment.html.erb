@@ -1,0 +1,18 @@
+
+<body>
+
+<table border="1">
+<tr>
+<td width="30%"><p align="center"><i><b>Name</b></i></td>
+<td width="50%"><p align="center"><i><b>Comment</b></i></td>
+<td width="20%"><p align="center"><i><b>Action</b></i></td>
+</tr>
+
+<tr>
+<td><p align="center"><%=comment.name %></td> 
+<td><%= comment.body %></td>
+<td><%= button_to 'Destroy Comment', [comment.item, comment],:confirm => 'Are you sure, about deleting the comment ?',:method => :delete %></tr>
+</tr>
+</table> 
+</p>
+</body>

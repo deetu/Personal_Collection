@@ -1,0 +1,18 @@
+<!-- app/views/users/my_account.html.erb -->
+<h1>My Collection Page</h1>
+
+<h3><p>Welcome! <%= @sessName %></br>
+
+<h4><p>It's <%=Time.now.strftime("%d/%m/%y %H:%M")%></br>
+<table cellspacing="15" align="center">
+<tr>
+<td> <%= link_to 'Add New Category', new_category_path %></td>
+<td> <%= link_to 'Add New Subcategory', new_subcategory_path %></td>
+<td><%= link_to 'Add New Items', new_item_path %></td>
+<td> <%= link_to 'View Categories', categories_path %></td>
+<td> <%= link_to 'View Subcategories', subcategories_path %></td>
+<td><%= link_to 'View Items', items_path(@session_id) %><td>
+</tr>
+</table>
+<br>
+<a href="log_out">Log out</a>

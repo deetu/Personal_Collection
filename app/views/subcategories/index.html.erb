@@ -1,0 +1,26 @@
+
+<h4><a href="categories">Category</a>               <a href="my_account">My Account</a>                  <a href="log_out">Log out</a></h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @subcategories.each do |subcategory| %>
+  <tr>
+    <td><%= subcategory.name %></td>
+    <td><%= subcategory.category.name %></td>
+    <td><%= link_to 'Show', subcategory %></td>
+    <td><%= link_to 'Edit', edit_subcategory_path(subcategory) %></td>
+    <td><%= link_to 'Destroy', subcategory, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Subcategory', new_subcategory_path %>
